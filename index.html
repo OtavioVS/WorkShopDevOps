@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop RDI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #FFFFFF;
+            background-color: #4D6683;
+        }
+
+        /* Container principal com background e overlay */
+        .hero {
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(77, 102, 131, 0.85), rgba(77, 102, 131, 0.85));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            line-height: 1.6;
+            color: #ffffffcc;
+        }
+
+        header, footer {
+            background-color: #4D6683;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        nav {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            min-height: 100vh;
+            display: none;
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #ffffff;
+            color: #4D6683;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        footer {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        button {
+            background-color: #FFFFFF;
+            color: #4D6683;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4D6683;
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#home" onclick="showSection('home')">Workshop RDI</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal -->
+    <div id="home" class="hero active">
+        <h1>Workshop RDI</h1>
+        <p>Aprendizado prático e colaborativo sobre inovação, tecnologia e desenvolvimento integrado.  
+        Uma experiência educacional para quem quer evoluir na prática.</p>
+    </div>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre o Workshop</h2>
+        <p>O Workshop RDI é uma iniciativa educacional voltada ao aprendizado técnico e prático, 
+           promovendo integração entre diferentes áreas do conhecimento, com foco em resultados e desenvolvimento humano.</p>
+    </section>
+
+
+
+    <footer>
+        <p>Workshop RDI © 2025 - Página Educacional</p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.hero, section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
